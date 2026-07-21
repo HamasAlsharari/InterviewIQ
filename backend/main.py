@@ -1,7 +1,12 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+from app.routers.auth import router as auth_router
+from app.database.database import Base, engine
+from app.models.user import User
+
 app = FastAPI()
+Base.metadata.create_all(bind=engine)
 
 origins = [
     "http://localhost:5173",
@@ -15,10 +20,13 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-
+# Health Check API
 @app.get("/api/health")
 def health():
     return {
         "status": "success",
         "message": "InterviewIQ API is running"
     }
+
+# Auth Router
+app.include_router(auth_router, prefix="/api/auth")
