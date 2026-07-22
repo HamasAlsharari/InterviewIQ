@@ -4,6 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.routers.auth import router as auth_router
 from app.database.database import Base, engine
 from app.models.user import User
+from app.routers.upload import router as upload_router
 
 app = FastAPI()
 Base.metadata.create_all(bind=engine)
@@ -30,3 +31,4 @@ def health():
 
 # Auth Router
 app.include_router(auth_router, prefix="/api/auth")
+app.include_router(upload_router, prefix="/api/upload")
