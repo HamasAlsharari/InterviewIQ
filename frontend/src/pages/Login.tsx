@@ -19,16 +19,20 @@ function Login() {
         password,
       });
 
-      console.log("Response:");
-      console.log(response.data);
+      const token = response.data.access_token;
+
+      localStorage.setItem("token", token);
+
+      const userResponse = await api.get("/api/auth/me", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
 
       localStorage.setItem(
-        "token",
-        response.data.access_token
+        "user",
+        JSON.stringify(userResponse.data)
       );
-
-      console.log("Saved Token:");
-      console.log(localStorage.getItem("token"));
 
       alert("Login successful!");
 

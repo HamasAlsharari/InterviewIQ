@@ -7,6 +7,10 @@ from app.models.user import User
 from app.routers.upload import router as upload_router
 from app.routers.interview import router as interview_router
 from app.routers.evaluate import router as evaluate_router
+from app.models.interview import Interview
+from app.models.interview_question import InterviewQuestion
+from app.routers.dashboard import router as dashboard_router
+from app.routers.report import router as report_router
 
 app = FastAPI()
 Base.metadata.create_all(bind=engine)
@@ -36,3 +40,5 @@ app.include_router(auth_router, prefix="/api/auth")
 app.include_router(upload_router, prefix="/api/upload")
 app.include_router(interview_router, prefix="/api/interview")
 app.include_router(evaluate_router, prefix="/api/interview")
+app.include_router(dashboard_router, prefix="/api/dashboard",)
+app.include_router(report_router, prefix="/api/report")
