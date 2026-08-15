@@ -11,7 +11,7 @@ from jose import jwt, JWTError
 from app.core.jwt_handler import SECRET_KEY, ALGORITHM
 
 router = APIRouter()
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="login")
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/api/auth/login")
 
 
 @router.get("/test")
@@ -86,12 +86,14 @@ def get_current_user(
     token: str = Depends(oauth2_scheme),
     db: Session = Depends(get_db),
 ):
+
     try:
         payload = jwt.decode(
             token,
             SECRET_KEY,
             algorithms=[ALGORITHM],
         )
+        
 
         email = payload.get("sub")
 
@@ -107,9 +109,11 @@ def get_current_user(
             detail="Invalid token"
         )
 
-    user = db.query(User).filter(
-        User.email == email
-    ).first()
+    user = (
+        db.query(User)
+        .filter(User.email == email)
+        .first()
+    )
 
     if not user:
         raise HTTPException(
