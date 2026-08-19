@@ -1,4 +1,4 @@
-🎯 InterviewIQ
+# 🎯 InterviewIQ
 
 InterviewIQ is an AI-powered technical interview practice platform designed to help candidates prepare for technical interviews through realistic interview questions, AI-powered evaluation, and performance tracking.
 
@@ -6,7 +6,7 @@ The platform allows users to create an account, start technical interviews, answ
 
 ⸻
 
-🚀 Features
+# 🚀 Features
 
 Feature	Description
 🔐 User Authentication	Secure registration and login using JWT authentication
@@ -18,7 +18,7 @@ Feature	Description
 
 ⸻
 
-🛠️ Tech Stack
+# 🛠️ Tech Stack
 
 Frontend
 
@@ -54,7 +54,7 @@ Postman	API testing
 
 ⸻
 
-📁 Project Structure
+# 📁 Project Structure
 
 InterviewIQ/
 │
@@ -85,7 +85,7 @@ InterviewIQ/
 
 ⸻
 
-⚙️ Installation & Setup
+# ⚙️ Installation & Setup
 
 1. Clone the Repository
 
@@ -94,7 +94,7 @@ cd InterviewIQ
 
 ⸻
 
-🔧 Backend Setup
+# 🔧 Backend Setup
 
 1. Navigate to the Backend
 
@@ -118,7 +118,7 @@ pip install -r requirements.txt
 
 ⸻
 
-🔑 Environment Variables
+# 🔑 Environment Variables
 
 Create a .env file inside the backend directory:
 
@@ -131,7 +131,7 @@ Make sure .env is included in .gitignore.
 
 ⸻
 
-▶️ Run the Backend
+# ▶️ Run the Backend
 
 Start the FastAPI development server:
 
@@ -143,7 +143,7 @@ http://127.0.0.1:8000
 
 ⸻
 
-💻 Frontend Setup
+# 💻 Frontend Setup
 
 1. Navigate to the Frontend
 
@@ -165,7 +165,7 @@ http://localhost:5173
 
 ⸻
 
-🔐 Authentication
+# 🔐 Authentication
 
 InterviewIQ uses JWT-based authentication to protect user-specific resources.
 
@@ -192,7 +192,7 @@ The authentication system includes:
 
 ⸻
 
-🎤 Interview Workflow
+# 🎤 Interview Workflow
 
 The main interview workflow is:
 
@@ -216,7 +216,7 @@ PDF Report
 
 ⸻
 
-🤖 AI-Powered Evaluation
+# 🤖 AI-Powered Evaluation
 
 InterviewIQ integrates with the Groq API to provide AI-powered interview evaluation.
 
@@ -232,7 +232,7 @@ This allows users to practice technical interviews and receive immediate AI-gene
 
 ⸻
 
-📊 Dashboard
+# 📊 Dashboard
 
 The dashboard allows authenticated users to review their interview performance.
 
@@ -245,7 +245,7 @@ It provides information such as:
 
 ⸻
 
-📄 PDF Reports
+# 📄 PDF Reports
 
 InterviewIQ allows users to generate a PDF report containing their interview results and evaluation.
 
@@ -258,7 +258,7 @@ The report can be used to:
 
 ⸻
 
-🧪 API Health Check
+# 🧪 API Health Check
 
 The backend provides a health-check endpoint:
 
@@ -273,7 +273,7 @@ Example Response
 
 ⸻
 
-🔒 Security
+# 🔒 Security
 
 InterviewIQ follows basic security practices to protect sensitive information and user data.
 
@@ -288,7 +288,7 @@ Never upload API keys, passwords, secret keys, or other sensitive credentials to
 
 ⸻
 
-🧹 Project Hygiene
+# 🧹 Project Hygiene
 
 Before publishing the project to GitHub, make sure the repository does not contain:
 
@@ -302,7 +302,7 @@ Before publishing the project to GitHub, make sure the repository does not conta
 
 ⸻
 
-🎯 Project Goal
+# 🎯 Project Goal
 
 The goal of InterviewIQ is to provide a practical and accessible environment for technical interview preparation by combining:
 
@@ -310,7 +310,7 @@ Technical Interview Practice + Artificial Intelligence + Automated Evaluation + 
 
 ⸻
 
-🔮 Future Improvements
+# 🔮 Future Improvements
 
 Potential future improvements include:
 
@@ -324,16 +324,16 @@ Potential future improvements include:
 
 ⸻
 
-👩‍💻 Author
+# 👩‍💻 Author
 
 Hamas Alsharari
 
-Software Engineering Graduate
+Software Engineering 
 
 GitHub: HamasAlsharari
 
 ⸻
 
-⭐ InterviewIQ
+# ⭐ InterviewIQ
 
 Practice. Improve. Get Interview Ready.
