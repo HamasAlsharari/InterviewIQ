@@ -1,8 +1,8 @@
-InterviewIQ 🎯
+# InterviewIQ 🎯
 AI-powered technical interview practice platform with instant feedback.
 InterviewIQ helps candidates practice technical interviews by generating AI-driven interview questions, evaluating answers, and producing detailed performance reports — all in one platform.
 
-✨ Features
+# ✨ Features
 	•	🔐 User Authentication — Secure signup/login with JWT-based auth
 	•	📄 Resume/CV Upload — Upload your CV to personalize the interview experience
 	•	🤖 AI-Generated Questions — Dynamic interview questions powered by AI
@@ -10,7 +10,7 @@ InterviewIQ helps candidates practice technical interviews by generating AI-driv
 	•	📊 Performance Dashboard — Track your progress across sessions
 	•	📑 PDF Interview Reports — Auto-generated, downloadable reports summarizing each session
 	
-  🛠️ Tech Stack
+# 🛠️ Tech Stack
 Backend
 	•	Python with FastAPI
 	•	SQLite database
