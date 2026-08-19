@@ -11,12 +11,12 @@ InterviewIQ helps candidates practice technical interviews by generating AI-driv
 	•	📑 PDF Interview Reports — Auto-generated, downloadable reports summarizing each session
 	
 # 🛠️ Tech Stack
-Backend
+# Backend
 	•	Python with FastAPI
 	•	SQLite database
 	•	JWT authentication
 	•	AI integration service for question generation & evaluation
 	•	PDF generation service for interview reports
-Frontend
+# Frontend
 	•	React + TypeScript
 	•	Component-based architecture (components, hooks, layouts, pages, services)
