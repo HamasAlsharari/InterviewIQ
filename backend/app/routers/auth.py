@@ -10,8 +10,12 @@ from fastapi.security import OAuth2PasswordBearer
 from jose import jwt, JWTError
 from app.core.jwt_handler import SECRET_KEY, ALGORITHM
 
+
 router = APIRouter()
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/api/auth/login")
+
+oauth2_scheme = OAuth2PasswordBearer(
+    tokenUrl="/api/auth/login"
+)
 
 
 @router.get("/test")
@@ -23,7 +27,10 @@ def test():
 
 
 @router.post("/register")
-def register(user: UserRegister, db: Session = Depends(get_db)):
+def register(
+    user: UserRegister,
+    db: Session = Depends(get_db),
+):
 
     existing_user = db.query(User).filter(
         User.email == user.email
@@ -45,14 +52,26 @@ def register(user: UserRegister, db: Session = Depends(get_db)):
     db.commit()
     db.refresh(new_user)
 
+    # Create JWT token after successful registration
+    token = create_access_token(
+        data={
+            "sub": new_user.email
+        }
+    )
+
     return {
         "status": "success",
-        "message": "User registered successfully"
+        "message": "User registered successfully",
+        "access_token": token,
+        "token_type": "bearer"
     }
 
 
 @router.post("/login")
-def login(user: UserLogin, db: Session = Depends(get_db)):
+def login(
+    user: UserLogin,
+    db: Session = Depends(get_db),
+):
 
     db_user = db.query(User).filter(
         User.email == user.email
@@ -64,7 +83,10 @@ def login(user: UserLogin, db: Session = Depends(get_db)):
             detail="Invalid email or password"
         )
 
-    if not verify_password(user.password, db_user.password):
+    if not verify_password(
+        user.password,
+        db_user.password
+    ):
         raise HTTPException(
             status_code=401,
             detail="Invalid email or password"
@@ -81,6 +103,8 @@ def login(user: UserLogin, db: Session = Depends(get_db)):
         "access_token": token,
         "token_type": "bearer"
     }
+
+
 @router.get("/me")
 def get_current_user(
     token: str = Depends(oauth2_scheme),
@@ -88,12 +112,12 @@ def get_current_user(
 ):
 
     try:
+
         payload = jwt.decode(
             token,
             SECRET_KEY,
             algorithms=[ALGORITHM],
         )
-        
 
         email = payload.get("sub")
 

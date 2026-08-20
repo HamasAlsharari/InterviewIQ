@@ -1,8 +1,11 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import api from "../services/api";
 
 function Register() {
+  const navigate = useNavigate();
+
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -17,8 +20,12 @@ function Register() {
         password: password,
       });
 
-      alert(response.data.message);
-      console.log(response.data);
+      localStorage.setItem(
+        "token",
+        response.data.access_token
+      );
+
+      navigate("/");
 
     } catch (error) {
       console.error(error);
